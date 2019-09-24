@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.11)
 
 project(libiconv C)
 
-add_library(libiconv SHARED
+option(BUILD_SHARED_LIBS "" ON)
+
+add_library(libiconv
   libcharset/lib/localcharset.c
   lib/iconv.c
 
@@ -13,9 +15,12 @@ target_compile_definitions(libiconv
   PRIVATE
     BUILDING_LIBICONV
   PUBLIC
-    LIBICONV_DLL
     _CRT_SECURE_NO_WARNINGS
 )
+
+if(BUILD_SHARED_LIBS)
+  target_compile_definitions(libiconv PUBLIC LIBICONV_DLL)
+endif()
 
 target_include_directories(libiconv PRIVATE
   include
