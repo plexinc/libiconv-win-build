@@ -28,10 +28,12 @@ target_include_directories(libiconv PRIVATE
   srclib
 )
 
-target_compile_options(libiconv PUBLIC
-  -Wno-parentheses-equality
-  -Wno-unused-function
-)
+if(NOT MSVC)
+  target_compile_options(libiconv PUBLIC
+    -Wno-parentheses-equality
+    -Wno-unused-function>
+  )
+endif()
 
 add_executable(iconv
   srclib/progname.c
