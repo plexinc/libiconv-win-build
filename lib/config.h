@@ -30,7 +30,7 @@
    iconv_open, iconv, iconv_close functions. */
 /* #undef HAVE_ICONV */
 /* Define as const if the declaration of iconv() needs const. */
-#define ICONV_CONST const
+#define ICONV_CONST
 
 /* Define to 1 if you have the getc_unlocked() function. */
 /* #undef HAVE_GETC_UNLOCKED */

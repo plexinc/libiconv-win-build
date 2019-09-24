@@ -410,8 +410,7 @@
 /* Define to 1 if you have the `_set_invalid_parameter_handler' function. */
 #define HAVE__SET_INVALID_PARAMETER_HANDLER 1
 
-/* Define as const if the declaration of iconv() needs const. */
-#define ICONV_CONST const
+#define ICONV_CONST
 
 /* Define to the value of ${prefix}, as a string. */
 #define INSTALLPREFIX "C:/libiconv"
@@ -499,7 +498,7 @@
 /* Define to the prefix of C symbols at the assembler and linker level, either
    an underscore or empty. */
 #ifdef _WIN64
-#define USER_LABEL_PREFIX 
+#define USER_LABEL_PREFIX
 #else
 #define USER_LABEL_PREFIX _
 #endif
